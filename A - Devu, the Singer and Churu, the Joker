@@ -1,0 +1,29 @@
+#include <cstdio>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int n,d;
+    scanf("%d%d",&n,&d);
+    
+    vector<int> song;
+    int sum=0;
+    for(int i=0;i<n;i++)
+    {
+        int element;
+        scanf("%d",&element);
+        song.push_back(element);
+        sum+=element;
+    }
+    int remaining = d-(n-1)*10-sum;
+    if(remaining>=0)
+    {
+        int jokes= 2*(n-1)+remaining/5;
+        printf("%d",jokes);
+    }
+    else
+    printf("-1");
+    
+}
