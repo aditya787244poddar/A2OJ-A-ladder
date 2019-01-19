@@ -1,0 +1,34 @@
+#include <cstdio>
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+    int r,c;
+    scanf("%d%d",&r,&c);
+    int cake[r+1][c+1];
+    int total=r*c;
+    
+    set<int> row;
+    set<int> column;
+    for(int i=1;i<=r;i++)
+    {
+        for(int j=1;j<=c;j++)
+        {
+            char ch;
+            scanf(" %c",&ch);
+            if(ch=='S')
+            {
+                row.insert(i);
+                column.insert(j);
+                
+            }
+             
+        }
+    }
+    int waste = row.size()*column.size();
+    printf("%d",total-waste);
+    return 0;
+}
