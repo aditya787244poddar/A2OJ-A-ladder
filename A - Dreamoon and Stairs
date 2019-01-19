@@ -1,0 +1,27 @@
+#include <cstdio>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,m;
+    scanf("%d%d",&n,&m);
+    int min,max;
+    max=n;
+    if(n%2==0)
+    min = n/2;
+    else
+    min = n/2+1;
+     int multiple;
+    if(min%m==0)
+    multiple = min/m;
+    else
+    multiple = min/m +1;
+    multiple*=m;
+    if(multiple<=max)
+    printf("%d",multiple);
+    else
+    printf("-1");
+    
+}
