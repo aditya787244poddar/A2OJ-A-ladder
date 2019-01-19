@@ -1,0 +1,31 @@
+#include <cstdio>
+#include <iostream>
+#include <cstring>
+#include <set>
+using namespace std;
+
+int main()
+{
+    string se;
+    
+    getline(cin, se);
+    int i=0;
+    set<char> count;
+    
+    while(se[i]!=NULL)
+    {
+    	if(se[i]!=' '&&se[i]!=',')
+        count.insert(se[i]);
+       i++;
+    }
+    
+    int result= count.size();
+    if(result<2)
+    printf("0");
+    else
+    printf("%d",result-2);
+
+    return 0;
+    
+}
+
