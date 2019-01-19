@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n,sum=0,sumt=0,coins=0;
+    scanf("%d",&n);
+	int arr[n];
+	for(int i=0;i<n;i++)
+	{
+	scanf("%d",&arr[i]);
+	sum+=arr[i];
+	}
+	sort(arr,arr+n);
+	for(int i=n-1;i>=0;i--)
+	{
+	    sumt+=arr[i];
+	    coins++;
+	    if(sumt>(sum-sumt))
+	    break;
+	}
+	printf("%d",coins);
+	return 0;
+}
