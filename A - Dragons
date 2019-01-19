@@ -1,0 +1,31 @@
+#include <cstdio>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+struct dragon {
+    int x, y;
+    bool operator<(const dragon &d) const {
+        return x < d.x;
+    }
+};
+dragon d[1001];
+int main() {
+    int n, s;
+    scanf("%d%d",&n,&s);
+    for (int i = 0; i < n; ++i) {
+    	scanf("%d%d",&d[i].x,&d[i].y);
+    }
+    int f = 1;
+    sort(d, d + n);
+    for (int i = 0; i < n && f!=0; ++i) {
+        if (s > d[i].x)
+            s += d[i].y;
+        else
+            f = 0;
+    }
+    if (f==1)
+        printf("YES");
+    else
+        printf("NO");
+    return 0;
+}
