@@ -1,0 +1,20 @@
+#include <cstdio>
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n,m;
+    scanf("%d%d",&n,&m);
+    int in;
+    if(n<m)
+    in=n;
+    else
+    in=m;
+    
+    if(in%2!=0)
+    printf("Akshat");
+    else
+    printf("Malvika");
+}
