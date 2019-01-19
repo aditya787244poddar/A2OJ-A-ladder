@@ -1,0 +1,44 @@
+#include <cstdio>
+#include <iostream>
+#include <vector>
+using namespace std;
+int min(int a,int b,int c)
+{
+    int less;
+    less=a<b?a:b;
+    less=less<c?less:c;
+    return less;
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    
+    vector<int> one;
+    vector<int> two;
+    vector<int> three;
+    for(int i=0;i<n;i++)
+    {
+        int element;
+        scanf("%d",&element);
+        if(element==1)
+        one.push_back(i+1);
+        else if(element==2)
+        two.push_back(i+1);
+        else
+        three.push_back(i+1);
+        
+    }
+    int a=one.size();
+    int b=two.size();
+    int c=three.size();
+    int mini = min(a,b,c);
+    printf("%d\n",mini);
+    int i=0;
+    while(mini--)
+    {
+        printf("%d %d %d\n",one[i],two[i],three[i]);
+        i++;
+    }
+    
+}
