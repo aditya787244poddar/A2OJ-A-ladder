@@ -1,0 +1,32 @@
+#include <cstdio>
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int x,y;
+    scanf("%d",&x);
+    set<int> passed;
+    for(int i=1;i<=x;i++)
+    {
+        int element;
+        scanf("%d",&element);
+        passed.insert(element);
+    }
+    scanf("%d",&y);
+    for(int i=1;i<=y;i++)
+    {
+        int element;
+        scanf("%d",&element);
+        passed.insert(element);
+    }
+    //printf("%d",passed.size());
+    if(passed.size()==n)
+    printf("I become the guy.");
+    else
+    printf("Oh, my keyboard!");
+}
