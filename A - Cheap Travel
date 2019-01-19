@@ -1,0 +1,23 @@
+#include <cstdio>
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+    int n,m,a,b;
+    cin>>n>>m>>a>>b;
+    int pass,ind;
+    pass = n/m;
+    ind = n%m;
+    
+    int answer = pass*b+a*ind;
+    int second = (pass+1)*b;
+    int third = a*n;
+    if(answer >second )
+    answer = second;
+    if (answer > third)
+    answer = third;
+    cout << answer;
+}
