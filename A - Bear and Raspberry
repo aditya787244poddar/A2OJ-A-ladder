@@ -1,0 +1,25 @@
+#include <cstdio> 
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    int n,c;
+    scanf("%d%d",&n,&c);
+    vector<int> berry(n+1);
+    for(int i=1;i<=n;i++)
+    {
+        scanf("%d",&berry[i]);
+    }
+    int max=0;
+    for(int i=1;i<n;i++)
+    {
+    	int diff = berry[i]-berry[i+1]-c;
+        if(diff>max)
+        max=diff;
+    }
+   
+    printf("%d",max);
+}
